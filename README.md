@@ -33,6 +33,12 @@
 `L` Exemplo: Olá, {{name}}! entre em nosso servidor caso precis. de ajuda.<br>
 `L` Resultado: Olá, nica! entre em nosso servidor caso precise de ajuda.<br>
 
+# Logger
+- Mensagens que começa com `[+]` quer dizer que o `Bot` conseguiu enviar as mensagens com sucesso.
+- Mensagens que começa com `[-]` quer dizer que o `Bot` não conseguiu enviar as mensagens. Motivo: Sem amigo na `friendlist`.
+- Caso o número de `Threads` seja `999 (Infinity)` o `log` com quantos loop restante não será enviado.
+
+
 # IMAGENS
 
 ## DASHBOARD

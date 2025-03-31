@@ -49,7 +49,7 @@ export default async function send({ name, text, min, max, count }: Settings): P
 
         if (friendList == undefined) {
             ++Cache.count
-            if (count != Infinity) logger('INFO', `Atual ${Cache.count} | Total ${count} | Faltam ${(count - Cache.count) ? `Falta ${count - Cache.count}` : 'Todas as mensagens foram enviadas com sucesso! :partying_face:'}`)
+            if (count != Infinity) logger('INFO', `[-] Atual ${Cache.count} | Total ${count} | ${(count - Cache.count) ? `Falta ${count - Cache.count}` : 'Sem sucesso ao enviar mensagem. :smiling_face_with_tear:'}`)
             await send({ name, text, min, max, count })
             return
         };
@@ -72,7 +72,7 @@ export default async function send({ name, text, min, max, count }: Settings): P
 
         ++Cache.count
 
-        if (count != Infinity) logger('INFO', `Atual ${Cache.count} | Total ${count} | Faltam ${(count - Cache.count) ? `Falta ${count - Cache.count}` : 'Todas as mensagens foram enviadas com sucesso! :partying_face:'}`)
+        if (count != Infinity) logger('INFO', `[+] Atual ${Cache.count} | Total ${count} | ${(count - Cache.count) ? `Falta ${count - Cache.count}` : 'Todas as mensagens foram enviadas com sucesso! :partying_face:'}`)
 
     } catch (e: any) {
         console.log(`Ocorreu um seguinte erro: ${e?.message ?? e}`)
