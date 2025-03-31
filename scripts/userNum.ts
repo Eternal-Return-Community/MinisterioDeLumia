@@ -1,5 +1,4 @@
-import { sleep } from "bun";
-import { add, all } from "./database.js";
+import { add } from "./database.js";
 
 let GAMES: Array<number> = []
 const FOUND: Array<number> = []
