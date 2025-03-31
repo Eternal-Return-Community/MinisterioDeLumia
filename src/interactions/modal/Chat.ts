@@ -1,7 +1,5 @@
 import { ModalSubmitInteraction } from "discord.js";
 import { Discord, ModalComponent } from "discordx";
-import repositories from "../../database/repositories";
-import Nadja from "../../services/Nadja";
 import send from "../../helpers/send";
 import { name, text } from "../../utils/settings.json"
 import Cache from "../../Cache";
