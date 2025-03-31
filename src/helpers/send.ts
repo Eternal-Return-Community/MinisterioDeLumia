@@ -36,7 +36,10 @@ export default async function send({ name, text, min, max, count }: Settings): P
                 if (gamestatus === 'Offline') continue;
                 const response = await Nadja.add(userCode);
 
-                if (response?.cod >= 7000) continue;
+                if (response?.cod >= 7000) {
+                    console.log(`[INFO] -> ${response.msg} | Thread: ${Cache.count} `)
+                    continue
+                };
 
                 logger('ADD', `solicitação de amizade enviada para ${nn} com sucesso!`)
             }
