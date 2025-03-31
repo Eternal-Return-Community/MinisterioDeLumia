@@ -28,6 +28,7 @@
 <color=<nome-da-cor>Ministério de Lumia</color>
 ```
 - Valores negativos dos campos `min, max e threads` são convertidos para números positivos.
+- O campo threads é convertido em **Infinity** caso o número seja **999**
 - O campo text pode receber uma variável custom chamada de **{{name}}**. A variável vai trocar o **{{name}}** pelo nome do usuário que vai receber a mensagem.<br>
 `L` Exemplo: Olá, {{name}}! entre em nosso servidor caso precis. de ajuda.<br>
 `L` Resultado: Olá, nica! entre em nosso servidor caso precise de ajuda.<br>
