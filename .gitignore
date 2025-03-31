@@ -1,0 +1,5 @@
+tests
+bun.lock
+node_modules
+.env
+package-lock.json
