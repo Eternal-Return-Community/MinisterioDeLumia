@@ -43,9 +43,10 @@ export default async function send({ name, text, min, max, count }: Settings): P
         }
 
         const friendList = await Nadja.list();
-        
+
         if (friendList == undefined) {
             ++Cache.count
+            if (count != Infinity) logger('INFO', `Atual ${Cache.count} | Total ${count} | Faltam ${(count - Cache.count) ? `Falta ${count - Cache.count}` : 'Todas as mensagens foram enviadas com sucesso! :partying_face:'}`)
             await send({ name, text, min, max, count })
             return
         };

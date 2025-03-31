@@ -14,14 +14,17 @@ export class UserRepository {
         })
     }
 
-    public static async players(level: iLeveling): Promise<Array<Omit<iUser, 'sent' | 'userNum'>>> {
+    public static async players(level: iLeveling): Promise<Array<Pick<iUser, 'userCode'>>> {
         return client.user.findMany({
             where: {
                 level: {
                     gte: level.min,
                     lte: level.max
                 },
-                //sent: false
+                sent: false
+            },
+            select: {
+                userCode: true
             },
             take: 100,
             skip: level.skip * 100,

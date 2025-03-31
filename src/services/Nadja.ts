@@ -26,7 +26,6 @@ export default class Nadja {
 
         const data: any = await response.json();
 
-
         if (data?.cod == 1006 || data?.msg === 'maintenance') throw new NadjaError('**ERBS** entrou em manutenção.');
 
         if (data?.cod == 1007) {
@@ -80,6 +79,5 @@ export default class Nadja {
         const response = await this.client('GET', '/lobby/enterRepeat/?supportLanguage=2&searchTime=0')
         Cache.userCode = response.user.uc
         Cache.userNum = response.user.un
-        console.log(Cache)
     }
 }

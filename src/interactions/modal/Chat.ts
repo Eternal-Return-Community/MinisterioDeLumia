@@ -14,6 +14,8 @@ export abstract class Chat {
     @ModalComponent()
     async panel(interaction: ModalSubmitInteraction): Promise<void> {
 
+        console.log(Cache)
+
         if (!Cache.isAvailable) {
             interaction.reply({ content: 'Algum administrador acabou de enviar um spam de mensagem.', flags: 'Ephemeral' });
             return
