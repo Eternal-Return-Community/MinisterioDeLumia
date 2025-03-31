@@ -1,4 +1,5 @@
 # Ministério de Lumia
+- Bot que adiciona todos os jogadores do servidor que joga no SA e envie mensagem divulgado o servidor de novatos<br>
 
 # Model
 | Name | Type  | Min  | Max  | Required  | Default|
