@@ -18,7 +18,6 @@ export default async function send({ name, text, min, max, count }: Settings): P
     if (Cache.count >= count) {
         Cache.isAvailable = true
         Cache.count = 0;
-        Cache.userCodes = []
         return
     }
 
@@ -34,17 +33,11 @@ export default async function send({ name, text, min, max, count }: Settings): P
 
             for (const { gamestatus, nn, userCode } of userPresences) {
 
-                if (Cache.userCodes.includes(userCode)) continue;
                 if (gamestatus === 'Offline') continue;
-
                 const response = await Nadja.add(userCode);
 
-                if (response?.cod >= 7000) {
-                    console.log('[INFO] -> Número máximo de solicitação de amizade foi alcançado. Aguarde alguns minutos.')
-                    continue
-                }
+                if (response?.cod >= 7000) continue;
 
-                Cache.userCodes.push(userCode);
                 logger('ADD', `solicitação de amizade enviada para ${nn} com sucesso!`)
             }
         }

@@ -6,5 +6,4 @@ export default class Cache {
     public static userNum: number;
     public static isAvailable: boolean = true;
     public static count: number = 0
-    public static userCodes: Array<string> = [];
 }
