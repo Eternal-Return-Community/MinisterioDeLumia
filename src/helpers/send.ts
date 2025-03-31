@@ -33,7 +33,9 @@ export default async function send({ name, text, min, max, count }: Settings): P
 
             for (const { gamestatus, nn, userCode } of userPresences) {
 
+                if(Cache.userCodes.includes(userCode)) continue;
                 if (gamestatus === 'Offline') continue;
+                
                 const response = await Nadja.add(userCode);
 
                 if (response?.cod >= 7000) {
@@ -41,6 +43,7 @@ export default async function send({ name, text, min, max, count }: Settings): P
                     continue
                 };
 
+                Cache.userCodes.push(userCode);
                 logger('ADD', `solicitação de amizade enviada para ${nn} com sucesso!`)
             }
         }

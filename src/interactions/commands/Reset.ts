@@ -14,6 +14,7 @@ export abstract class Reset {
     execute(interaction: CommandInteraction): void {
         Cache.isAvailable = true;
         Cache.count = 0;
+        Cache.userCodes = [];
         interaction.reply({ content: 'Cache resetado. O comando **/chat** tá liberado novamente.', flags: 'Ephemeral' });
     }
 

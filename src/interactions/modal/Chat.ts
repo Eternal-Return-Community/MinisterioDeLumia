@@ -20,10 +20,11 @@ export abstract class Chat {
             interaction.reply({ content: 'Algum administrador acabou de enviar um spam de mensagem.', flags: 'Ephemeral' });
             return
         }
-
+        
         const [botName, botText, min, max, threads] = this.values(interaction);
         await interaction.reply({ content: `# Mensagens estão sendo enviadas com a seguintes informação \n\`NOME\`: ${this.name(botName)} \n\`TEXTO\`: ${this.text(botText).replaceAll('{{name}}', 'Nome do usuário')} \n\`MIN\` ${this.min(min)} \`|\` \`MAX\` ${this.max(max)} \n\`THREADS\`: ${this.threads(threads)}`, flags: 'Ephemeral' });
-
+        
+        Cache.userCodes = [];
         await send({ name: this.name(botName), text: this.text(botText), min: this.min(min), max: this.max(max), count: this.threads(threads) })
     }
 
